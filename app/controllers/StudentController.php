@@ -1,36 +1,50 @@
 <?php
-
-namespace App\Controllers;
-
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
-class StudentController extends Controller
-{
-    public function index()
-    {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+class StudentController extends Controller {
 
-        $_SESSION['student_access'] = true;
-
-        $this->call->view('student/homepage');
+    public function index() {
+        $this->call->view('student/index');
     }
 
-    public function profile()
-    {
-        $student = [
-            'student_id' => 'MCG2021-00202',
-            'name'       => 'Jing Katlene A. Soto',
-            'course'     => 'BS Information Technology',
-            'year'       => '3rd Year',
-            'section'    => 'F5',
-            'email'      => 'jingkatlene@gmail.com',
-            'address'    => 'Sitio Bibihan, Brgy. Puting Tubig, Calapan City, Oriental Mindoro',
-            'contact'    => '09203747743',
-            'hobbies'    => 'Watching movies, K-drama, C-drama, dog lover',
+    public function profile() {
+      
+        $data['student'] = [
+          
+            'student_id'        => '2024-00211',
+            'name'              => 'Zhann Cyprus Kylle R. Mañibo',
+            'profile_pic'       => 'profile.jpg',
+            'course'            => 'BS Information Technology',
+            'year'              => '3rd Year',
+            'section'           => '3F-5',
+            'academic_status'   => 'Regular',
+            
+            
+            'email'             => 'zhannmanibo@gmail.com',
+            'contact_no'        => '09350039298',
+            'address'           => 'Mahal Na Pangalan Calapan City ',
+            'birthdate'         => '2006-05-20',
+            'gender'            => 'Male ',
+            
+         
+            'department'        => 'College of Computer Studies',
+            'adviser'           => 'Ronald Marasigan',
+            'gpa'               => 'N/A',
+            
+            
+            'skills'            => 'PHP, LavaLust Framework, HTML/CSS, JavaScript, MySQL',
+            'hobbies'           => 'Gaming, Watching Netflix, Do simple task',
+            
+            
+            'emergency_contact' => 'Margie Jane R. Mañibo (Mother)',
+            'emergency_no'      => '+63 998 765 4321',
+
+           
+            'github'            => 'https://github.com/zhannmanibo-star',
+            
         ];
 
-        $this->call->view('student/student_profile', $student);
+        
+        $this->call->view('student/profile', $data);
     }
 }
