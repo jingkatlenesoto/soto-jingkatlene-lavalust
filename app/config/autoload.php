@@ -82,7 +82,7 @@ $autoload['libraries'] = array();
 |
 |	$autoload['helpers'] = array('url', 'file');
 */
-$autoload['helpers'] = array('url');
+$autoload['helpers'] = array();
 
 /*
 | -------------------------------------------------------------------
@@ -106,5 +106,6 @@ $autoload['models'] = array();
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['configs'] = array('middleware');
+$autoload['configs'] = array();
+$autoload['helpers'] = array('url');
 ?>
