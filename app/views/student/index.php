@@ -113,9 +113,9 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="index.php">Home</a>
+    <a href="<?= site_url(); ?>">Home</a>
     <span class="sep">|</span>
-    <a href="profile.php">Student Profile</a>
+    <a href="<?= site_url('student/profile'); ?>">Student Profile</a>
   </div>
 
   <div class="hero">
@@ -127,7 +127,7 @@
     <div class="quick-card">
       <h2>Quick Access</h2>
       <p>Select "Student Profile" from the menu or click below to view complete academic records, personal information, and contact details.</p>
-      <a href="profile.php" class="btn-profile">View Student Profile</a>
+      <a href="<?= site_url('student/profile'); ?>" class="btn-profile">View Student Profile</a>
     </div>
   </div>
 

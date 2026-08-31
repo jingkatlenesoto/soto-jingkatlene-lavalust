@@ -223,9 +223,9 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="index.php" class="dim">Home</a>
+    <a href="<?= site_url(); ?>" class="dim">Home</a>
     <span class="sep">|</span>
-    <a href="profile.php">Student Profile</a>
+    <a href="<?= site_url('student/profile'); ?>">Student Profile</a>
   </div>
 
   <div class="header">
