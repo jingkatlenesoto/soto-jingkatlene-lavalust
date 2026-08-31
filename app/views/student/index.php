@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Portal</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
@@ -26,6 +27,10 @@
     color:#F7941D;
     text-decoration:none;
     font-size:15px;
+    transition: opacity 0.2s ease;
+  }
+  .navbar a:hover{
+    opacity: 0.8;
   }
   .navbar .sep{color:#2E4D74;}
 
@@ -91,6 +96,11 @@
     padding:14px 32px;
     border-radius:10px;
     box-shadow:0 10px 22px -8px rgba(224,105,43,0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-profile:hover{
+    transform: translateY(-2px);
+    box-shadow:0 14px 26px -8px rgba(224,105,43,0.8);
   }
 
   .spacer{height:60px;}
@@ -103,9 +113,9 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="#">Home</a>
+    <a href="index.php">Home</a>
     <span class="sep">|</span>
-    <a href="#">Student Profile</a>
+    <a href="profile.php">Student Profile</a>
   </div>
 
   <div class="hero">
@@ -117,7 +127,7 @@
     <div class="quick-card">
       <h2>Quick Access</h2>
       <p>Select "Student Profile" from the menu or click below to view complete academic records, personal information, and contact details.</p>
-      <a href="#" class="btn-profile">View Student Profile</a>
+      <a href="profile.php" class="btn-profile">View Student Profile</a>
     </div>
   </div>
 

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Profile</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
@@ -28,6 +29,10 @@
     color:#F7941D;
     text-decoration:none;
     font-size:15px;
+    transition: opacity 0.2s ease;
+  }
+  .navbar a:hover{
+    opacity: 0.8;
   }
   .navbar a.dim{color:#7FA6D6;}
   .navbar .sep{color:#2E4D74;}
@@ -218,9 +223,9 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="#" class="dim">Home</a>
+    <a href="index.php" class="dim">Home</a>
     <span class="sep">|</span>
-    <a href="#">Student Profile</a>
+    <a href="profile.php">Student Profile</a>
   </div>
 
   <div class="header">
@@ -279,7 +284,7 @@
           <a href="https://github.com/jingkatlenesoto/soto-jingkatlene-lavalust" target="_blank" rel="noopener">
             View GitHub <span class="arrow">→</span>
           </a>
-          <a href="#">
+          <a href="tel:09092929614">
             Emergency Contact — Rene Boy N. Soto (Father) <span class="arrow">→</span>
           </a>
           <a href="tel:09092929614">
