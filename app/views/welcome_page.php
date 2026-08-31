@@ -580,8 +580,8 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         A lightweight, expressive PHP MVC framework built for developers who want structure without the bloat.
     </p>
     <div class="hero-actions">
-        <a href="<?= site_url('student/profile'); ?>" class="btn btn-primary">
-            View Student Profile
+        <a href="https://lavalust.netlify.app/docs/" target="_blank" class="btn btn-primary">
+            Read the Docs
         </a>
         <a href="https://github.com/ronmarasigan/LavaLust" target="_blank" class="btn btn-ghost">
             View on GitHub
