@@ -6,13 +6,17 @@
     <title>Student Portal - Home</title>
     <style>
         :root {
-            --primary: #4c566a;         /* Deep slate-indigo */
-            --primary-dark: #3b4252;    /* Dark navy-slate */
-            --accent: #5e81ac;          /* Muted steel blue */
-            --bg-color: #f2f4f8;        /* Soft gray background */
+            --purple: #b39ddb;          /* Lavender purple (calculator body) */
+            --purple-dark: #7c5295;     /* Deep purple (the "=" key) */
+            --purple-darker: #5c3a72;   /* Even deeper, for headings */
+            --pink: #f4b8cd;            /* Soft pink */
+            --pink-dark: #e88fae;       /* Dusty rose */
+            --cream: #f3dfc1;           /* Cream/tan keys */
+            --bg-color: #f7f2fb;        /* Very light lavender page bg */
             --card-bg: #ffffff;
-            --text-main: #2e3440;       /* Dark slate text */
-            --text-muted: #7e889b;     /* Muted gray text */
+            --text-main: #4a3b5c;       /* Deep purple-grey text */
+            --text-muted: #9c8bb4;
+            --border: #eadff6;
         }
 
         * {
@@ -32,27 +36,27 @@
         nav {
             background-color: #ffffff;
             padding: 15px 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 10px rgba(124, 82, 149, 0.06);
             display: flex;
             gap: 15px;
         }
         nav a {
             text-decoration: none;
-            color: var(--accent);
+            color: var(--purple-dark);
             font-weight: 600;
             font-size: 14px;
         }
         nav a:hover {
-            color: var(--primary-dark);
+            color: var(--purple-darker);
         }
 
         /* Hero Header Section */
         .hero-header {
-            background-color: var(--primary-dark);
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
             color: white;
             padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 20px rgba(124, 82, 149, 0.25);
         }
 
         .hero-header h1 {
@@ -64,7 +68,7 @@
 
         .hero-header p {
             font-size: 16px;
-            opacity: 0.85;
+            opacity: 0.9;
         }
 
         /* Main Container */
@@ -77,16 +81,16 @@
         /* Card Element */
         .card {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e5e9f0;
+            box-shadow: 0 4px 15px rgba(124, 82, 149, 0.06);
+            border: 1px solid var(--border);
             text-align: center;
         }
 
         .card h2 {
             font-size: 20px;
-            color: var(--primary-dark);
+            color: var(--purple-darker);
             margin-bottom: 12px;
         }
 
@@ -97,23 +101,23 @@
             margin-bottom: 25px;
         }
 
-        /* Action Button */
+        /* Action Button (pink calculator key style) */
         .btn {
             display: inline-block;
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
             color: #ffffff;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 0 4px 12px rgba(232, 143, 174, 0.35);
         }
 
         .btn:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(232, 143, 174, 0.45);
         }
     </style>
 </head>

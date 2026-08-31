@@ -6,13 +6,18 @@
     <title>Student Profile</title>
     <style>
         :root {
-            --primary: #4c566a;         /* Deep slate-indigo */
-            --primary-dark: #3b4252;    /* Dark navy-slate */
-            --accent: #5e81ac;          /* Muted steel blue */
-            --bg-color: #f2f4f8;        /* Soft gray background */
+            --purple: #b39ddb;          /* Lavender purple (calculator body) */
+            --purple-dark: #7c5295;     /* Deep purple (the "=" key) */
+            --purple-darker: #5c3a72;   /* Even deeper, for headings */
+            --pink: #f4b8cd;            /* Soft pink */
+            --pink-dark: #e88fae;       /* Dusty rose */
+            --cream: #f3dfc1;           /* Cream/tan keys */
+            --bg-color: #f7f2fb;        /* Very light lavender page bg */
             --card-bg: #ffffff;
-            --text-main: #2e3440;       /* Dark slate text */
-            --text-muted: #7e889b;     /* Muted gray text */
+            --screen-bg: #ece7f3;       /* Calculator screen grey-lavender */
+            --text-main: #4a3b5c;       /* Deep purple-grey text */
+            --text-muted: #9c8bb4;
+            --border: #eadff6;
         }
 
         * {
@@ -32,30 +37,30 @@
         nav {
             background-color: #ffffff;
             padding: 15px 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 10px rgba(124, 82, 149, 0.06);
             display: flex;
             gap: 15px;
         }
         nav a {
             text-decoration: none;
-            color: var(--accent);
+            color: var(--purple-dark);
             font-weight: 600;
             font-size: 14px;
         }
         nav a:hover {
-            color: var(--primary-dark);
+            color: var(--purple-darker);
         }
 
         /* Hero Header Section */
         .hero-header {
-            background-color: var(--primary-dark);
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
             color: white;
             padding: 40px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 35px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 20px rgba(124, 82, 149, 0.25);
         }
 
         /* Dual Ring Profile Picture */
@@ -63,11 +68,12 @@
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.25);
+            border: 3px solid rgba(255, 255, 255, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            background: var(--pink);
         }
         .profile-ring-inner {
             width: 124px;
@@ -92,7 +98,7 @@
         .hero-info h2 {
             font-size: 18px;
             font-weight: 400;
-            opacity: 0.85;
+            opacity: 0.9;
             margin-bottom: 20px;
         }
         .hero-meta {
@@ -100,7 +106,7 @@
             flex-wrap: wrap;
             gap: 20px;
             font-size: 14px;
-            opacity: 0.9;
+            opacity: 0.95;
         }
         .hero-meta-item {
             display: flex;
@@ -124,21 +130,21 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            color: var(--text-muted);
+            color: var(--purple-dark);
             margin-bottom: 15px;
         }
 
         /* Card Elements */
         .card {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 15px rgba(124, 82, 149, 0.06);
             margin-bottom: 25px;
-            border: 1px solid #e5e9f0;
+            border: 1px solid var(--border);
         }
 
-        /* Slate Highlight Cards */
+        /* Highlight Cards (calculator-key inspired) */
         .purple-card-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -146,11 +152,14 @@
             margin-bottom: 25px;
         }
         .purple-card {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
             color: white;
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 14px rgba(124, 82, 149, 0.2);
+        }
+        .purple-card.pink {
+            background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
         }
         .purple-card h4 {
             font-size: 15px;
@@ -159,7 +168,7 @@
         }
         .purple-card p {
             font-size: 13px;
-            opacity: 0.85;
+            opacity: 0.9;
         }
 
         /* Key-Value Details List */
@@ -172,7 +181,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px dashed #e5e9f0;
+            border-bottom: 1px dashed var(--border);
             padding-bottom: 8px;
             font-size: 14px;
         }
@@ -190,7 +199,7 @@
             text-align: right;
         }
 
-        /* Badges for Skills & Hobbies */
+        /* Badges for Skills & Hobbies (calculator keys) */
         .badge-container {
             display: flex;
             flex-wrap: wrap;
@@ -198,12 +207,16 @@
             margin-top: 5px;
         }
         .badge {
-            background-color: #e5e9f0;
-            color: var(--primary-dark);
+            background-color: var(--screen-bg);
+            color: var(--purple-darker);
             padding: 6px 14px;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 12px;
             font-weight: 600;
+        }
+        .badge.cream {
+            background-color: var(--cream);
+            color: #8a6a3c;
         }
 
         /* Responsive Breakpoint */
@@ -268,7 +281,7 @@
                     <h4><?= $student['course']; ?></h4>
                     <p><?= $student['year']; ?> (Section <?= $student['section']; ?>)</p>
                 </div>
-                <div class="purple-card">
+                <div class="purple-card pink">
                     <h4>GPA: <?= $student['gpa']; ?></h4>
                     <p>Status: <?= $student['academic_status']; ?></p>
                 </div>
@@ -293,7 +306,7 @@
                         $hobbies = explode(',', $student['hobbies']);
                         foreach($hobbies as $hobby): 
                     ?>
-                        <span class="badge" style="background-color: #f0f2f5; color: #555;"><?= trim($hobby); ?></span>
+                        <span class="badge cream"><?= trim($hobby); ?></span>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -335,7 +348,7 @@
                     <div class="info-item">
                         <span class="info-label">GitHub</span>
                         <span class="info-value">
-                            <a href="<?= $student['github']; ?>" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Profile</a>
+                            <a href="<?= $student['github']; ?>" target="_blank" style="color: var(--purple-dark); text-decoration: none; font-weight: 600;">View Profile</a>
                         </span>
                     </div>
                     <div class="info-item">
