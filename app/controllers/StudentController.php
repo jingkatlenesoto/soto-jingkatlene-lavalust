@@ -11,20 +11,20 @@ class StudentController extends Controller {
       
         $data['student'] = [
           
-            'student_id'        => '2024-00211',
-            'name'              => 'Zhann Cyprus Kylle R. Mañibo',
+            'student_id'        => '2024-00202',
+            'name'              => 'Jing katlene A. Soto',
             'profile_pic'       => 'profile.jpg',
             'course'            => 'BS Information Technology',
             'year'              => '3rd Year',
             'section'           => '3F-5',
-            'academic_status'   => 'Regular',
+            'academic_status'   => 'Active',
             
             
-            'email'             => 'zhannmanibo@gmail.com',
-            'contact_no'        => '09350039298',
+            'email'             => 'jingkatlenes@gmail.com',
+            'contact_no'        => '09203747743',
             'address'           => 'Mahal Na Pangalan Calapan City ',
-            'birthdate'         => '2006-05-20',
-            'gender'            => 'Male ',
+            'birthdate'         => '2006-06-28',
+            'gender'            => 'Female ',
             
          
             'department'        => 'College of Computer Studies',
@@ -33,14 +33,14 @@ class StudentController extends Controller {
             
             
             'skills'            => 'PHP, LavaLust Framework, HTML/CSS, JavaScript, MySQL',
-            'hobbies'           => 'Gaming, Watching Netflix, Do simple task',
+            'hobbies'           => 'sleeping, Watching Short Drama, Love dogs',
             
             
-            'emergency_contact' => 'Margie Jane R. Mañibo (Mother)',
-            'emergency_no'      => '+63 998 765 4321',
+            'emergency_contact' => 'Rene Boy N. Soto (Father)',
+            'emergency_no'      => '09092929614',
 
            
-            'github'            => 'https://github.com/zhannmanibo-star',
+            'github'            => 'https://github.com/jingkatlenesoto/soto-jingkatlene-lavalust',
             
         ];
 
