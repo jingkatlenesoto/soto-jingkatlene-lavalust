@@ -1,234 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - Home</title>
-    <style>
-        :root {
-            --purple: #b39ddb;          /* Lavender purple */
-            --purple-dark: #7c5295;     /* Deep purple */
-            --purple-darker: #5c3a72;   /* Deeper purple for text/accent */
-            --pink: #f4b8cd;            /* Soft pink */
-            --pink-dark: #e88fae;       /* Primary action pink */
-            --cream: #f3dfc1;           /* Cream accent */
-            --bg-color: #f7f2fb;        /* Page background */
-            --card-bg: #ffffff;         /* Main container background */
-            --card-inner: #faf7fd;      /* Sub-box background */
-            --text-main: #4a3b5c;       /* Dark text */
-            --text-muted: #8e7a9f;      /* Muted text */
-            --border: #eadff6;          /* Border color */
-        }
+<meta charset="UTF-8">
+<title>Student Portal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:#0B1A2E;
+    min-height:100vh;
+  }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  .navbar{
+    background:#0F2340;
+    padding:16px 40px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    font-weight:600;
+  }
+  .navbar a{
+    color:#F7941D;
+    text-decoration:none;
+    font-size:15px;
+  }
+  .navbar .sep{color:#2E4D74;}
 
-        /* Top Navigation */
-        nav {
-            background-color: #ffffff;
-            padding: 15px 40px;
-            box-shadow: 0 2px 10px rgba(124, 82, 149, 0.06);
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--purple-dark);
-            font-weight: 600;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: var(--purple-darker);
-        }
-        nav span {
-            color: var(--border);
-        }
+  .hero{
+    background:linear-gradient(100deg, #12345C 0%, #0B2340 55%, #081A30 100%);
+    padding:64px 20px 72px;
+    text-align:center;
+    color:#fff;
+  }
+  .hero h1{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:40px;
+    margin:0 0 14px 0;
+  }
+  .hero p{
+    font-size:17px;
+    margin:0;
+    color:#AFC6DE;
+  }
 
-        /* Hero Wrapper */
-        .hero-wrapper {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
+  .content{
+    display:flex;
+    justify-content:center;
+    padding:0 20px;
+    margin-top:-40px;
+  }
 
-        /* Main Card Layout */
-        .card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 40px 35px;
-            max-width: 580px;
-            width: 100%;
-            box-shadow: 0 10px 30px rgba(124, 82, 149, 0.1);
-            border: 1px solid var(--border);
-            text-align: center;
-            position: relative;
-        }
+  .quick-card{
+    background:#0F2340;
+    max-width:640px;
+    width:100%;
+    border-radius:14px;
+    border:1px solid rgba(247,148,29,0.2);
+    box-shadow:0 24px 50px -20px rgba(0,0,0,0.5);
+    padding:44px 48px 48px;
+    text-align:center;
+  }
 
-        .top-line {
-            width: 40px;
-            height: 4px;
-            background: var(--pink-dark);
-            border-radius: 2px;
-            margin: 0 auto 18px;
-        }
+  .quick-card h2{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:24px;
+    color:#F7941D;
+    margin:0 0 18px 0;
+  }
 
-        .badge {
-            display: inline-block;
-            background-color: #f3e9fa;
-            color: var(--purple-darker);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 6px 16px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border);
-        }
+  .quick-card p{
+    font-size:15px;
+    line-height:1.6;
+    color:#9FB4CC;
+    max-width:44ch;
+    margin:0 auto 28px;
+  }
 
-        .card h1 {
-            font-size: 28px;
-            color: var(--purple-darker);
-            margin-bottom: 12px;
-            font-weight: 700;
-            line-height: 1.3;
-        }
+  .btn-profile{
+    display:inline-block;
+    background:linear-gradient(90deg, #F7941D, #E0692B);
+    color:#fff;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    padding:14px 32px;
+    border-radius:10px;
+    box-shadow:0 10px 22px -8px rgba(224,105,43,0.6);
+  }
 
-        .card p.description {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 28px;
-        }
+  .spacer{height:60px;}
 
-        /* Button Group */
-        .btn-group {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 22px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-
-        .btn-secondary {
-            background-color: #f0e6f7;
-            color: var(--purple-darker);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background-color: #e4d5f0;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(232, 143, 174, 0.35);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(232, 143, 174, 0.45);
-        }
-
-        /* Info Lock Box */
-        .info-box {
-            background-color: var(--card-inner);
-            border: 1px dashed var(--purple);
-            border-radius: 12px;
-            padding: 16px 20px;
-            font-size: 13px;
-            color: var(--text-main);
-            text-align: left;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .info-box p {
-            margin-bottom: 4px;
-        }
-
-        .info-box a {
-            color: var(--purple-dark);
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
-        /* Card Footer */
-        .card-footer {
-            font-size: 11px;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-    </style>
+  @media (max-width:600px){
+    .hero h1{font-size:28px;}
+    .quick-card{padding:32px 24px 36px;}
+  }
+</style>
 </head>
 <body>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <span class="sep">|</span>
+    <a href="#">Student Profile</a>
+  </div>
 
-    <!-- Top Navigation Bar -->
-    <nav>
-        <a href="<?= site_url('student'); ?>">Home</a>
-        <span>|</span>
-        <a href="<?= site_url('student/profile'); ?>">Student Profile</a>
-    </nav>
+  <div class="hero">
+    <h1>Welcome to the Student Portal</h1>
+    <p>Access and manage your student information seamlessly.</p>
+  </div>
 
-    <!-- Main Container -->
-    <div class="hero-wrapper">
-        <div class="card">
-            <div class="top-line"></div>
-            <div class="badge">✦ Student Information System</div>
-            
-            <h1>Welcome, Allyssa Mae R. Macalalad!</h1>
-            <p class="description">Your personal student information dashboard. Access your profile and manage your student information through the LavaLust system.</p>
-
-            <div class="btn-group">
-                <a href="<?= site_url('student'); ?>" class="btn btn-secondary">
-                    🏠 Home
-                </a>
-                <a href="<?= site_url('student/profile'); ?>" class="btn btn-primary">
-                    👤 Student Profile
-                </a>
-            </div>
-
-            <div class="info-box">
-                <p>🔒 <strong>The Student Profile page is protected by StudentMiddleware.</strong></p>
-                <p>If you haven't unlocked access yet, click <a href="#">here to grant access</a> before opening your profile.</p>
-            </div>
-
-            <div class="card-footer">
-                LAVALUST • STUDENT PORTAL
-            </div>
-        </div>
+  <div class="content">
+    <div class="quick-card">
+      <h2>Quick Access</h2>
+      <p>Select "Student Profile" from the menu or click below to view complete academic records, personal information, and contact details.</p>
+      <a href="#" class="btn-profile">View Student Profile</a>
     </div>
+  </div>
 
+  <div class="spacer"></div>
 </body>
 </html>
